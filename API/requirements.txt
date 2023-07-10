@@ -2,4 +2,3 @@ flask
 flask_restful
 googletrans==4.0.0-rc1
 gunicorn
---upgrade pip
