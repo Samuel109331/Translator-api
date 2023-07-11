@@ -1,9 +1,11 @@
 from flask_restful import Api,Resource
 from flask import Flask,make_response,render_template
+from flask_cors import CORS
 import googletrans
 
 
 app = Flask(__name__)
+
 app.config['JSON_AS_ASCII'] = False
 rest_api = Api(app)
 
@@ -20,6 +22,7 @@ class TranslateText(Resource):
     
 rest_api.add_resource(LanguageList,"/langlist")
 rest_api.add_resource(TranslateText,"/translate/<string:word>/<string:lang>")
+cors = CORS(app,r"/*":{"orgins":"*"})
 
 @app.route("/")
 def homePage():
