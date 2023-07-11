@@ -22,7 +22,8 @@ class TranslateText(Resource):
     
 rest_api.add_resource(LanguageList,"/langlist")
 rest_api.add_resource(TranslateText,"/translate/<string:word>/<string:lang>")
-cors = CORS(app,r"/*":{"orgins":"*"})
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
+
 
 @app.route("/")
 def homePage():
